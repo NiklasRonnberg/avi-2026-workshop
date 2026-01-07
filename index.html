@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Workshop at AVI 2026 on evaluating advanced multimodal interfaces. The workshop aims to develop new methodologies, heuristics, and modular questionnaires for user-centered evaluation of modern multimodal and visual interfaces.">
+  <meta name="keywords" content="AVI 2026, multimodal interfaces, user evaluation, visualization, questionnaires, user experience, HCI workshop">
+  <meta name="author" content="Camilla Forsell, Niklas Rönnberg">
+  <meta property="og:title" content="Evaluation of Advanced Multimodal Interfaces: Towards New Methodologies">
+  <meta property="og:description" content="AVI 2026 workshop focusing on new evaluation methodologies for advanced multimodal and visual interfaces.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AVI 2026 Workshop">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Evaluation of Advanced Multimodal Interfaces: Towards New Methodologies">
+  <meta name="twitter:description" content="Workshop at AVI 2026 on evaluation methodologies for advanced multimodal interfaces.">
+  <meta name="robots" content="index, follow">
+  <title>Evaluation of Advanced Multimodal Interfaces: Towards New Methodologies. Workshop – AVI 2026</title>
+
+  <style>
+    :root {
+      --primary: #2f6fed;
+      --text: #222;
+      --muted: #333d52;
+      --bg: #f9f9fb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--muted);
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #header-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    section {
+      max-width: 720px;
+      margin: auto;
+      padding: 1.5rem;
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      padding-bottom: 0.8rem;
+    }
+
+    section ul {
+      padding-left: 3rem;
+    }
+
+    section ol {
+      padding-left: 3rem;
+    }
+
+    section li {
+      padding-bottom: 0.4rem;
+    }
+
+    a,
+    a:visited {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(47, 111, 237, 0.5);
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .timeline {
+      border-left: 3px solid var(--primary);
+      padding-left: 2.5rem;
+      margin-top: 1rem;
+    }
+
+    .timeline-item {
+      padding-left: 0.8rem;
+      margin-bottom: 1.4rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.1rem;
+      top: 0.3rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+
+    .timeline-date {
+      font-weight: 600;
+    }
+
+    .timeline-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+    }
+    #resources ul {
+      columns: 2;
+      column-gap: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      #resources ul {
+        columns: 1;
+      }
+    }
+    @media print {
+      nav {
+        display: none;
+      }
+
+      a {
+        border-bottom: none;
+        color: black;
+      }
+
+      header {
+        background: white !important;   /* Ensure background is plain white */
+        border-bottom: none;            /* Remove bottom border if desired */
+        padding: 1rem;                  /* Optional: reduce header padding for print */
+      }
+
+      #header-canvas {
+        display: none;                  /* Hide the animated canvas */
+      }
+
+      header h1,
+      header p {
+        color: black;                   /* Make header text fully black for printing */
+      }
+    }
+  </style>
+</head>
+
+<body>
+<nav>
+  <a href="#about">About</a>
+  <a href="#topics">Topics</a>
+  <a href="#submit">Submission</a>
+  <a href="#dates">Important Dates</a>
+  <a href="#organizers">Organizers</a>
+  <a href="#format">Format</a>
+  <a href="#resources">Resources</a>
+</nav>
+
+
+<header>
+  <canvas id="header-canvas"></canvas>
+  <div class="header-content">
+    <h1>Evaluation of Advanced Multimodal Interfaces: Towards New Methodologies</h1>
+    <p>8th–12th June 2026 · @ AVI 2026</p>
+  </div>
+</header>
+
+
+<section id="about">
+  <h2>About the Workshop</h2>
+  <p>As interfaces become increasingly advanced and multimodal, ranging from complex dashboards to XR applications, traditional evaluation methods and questionnaires are often inadequate for capturing the full spectrum of user experience. This workshop aims to bring together researchers and practitioners to discuss the development of new evaluation instruments and heuristics tailored to contemporary multimodal interfaces. The expected outcome is a modular questionnaire framework that supports rigorous and flexible assessment of user experience (including both qualitative and quantitative measures) across diverse interaction modalities.</p>
+  <p>This workshop is aimed at practitioners, PhD students, and senior researchers working with advanced visual interfaces and/or multimodal data representations. We think it is good if you have some previous experience of user centred evaluation, and an interest in working towards a toolbox of methods for evaluation of advanced visual and multimodal data representations.</p>
+  <p>With this workshop, we aim to foster deeper discussions and to initiate the work of collaboratively developing a modular questionnaire framework suitable for evaluating modern advanced visual interfaces.</p>
+</section>
+
+<section id="topics">
+  <h2>List of Topics</h2>
+  <ul>
+    <li>Visualization and multimodal data representation, and interaction</li>
+    <li>Evaluation methods and metrics for multimodal interfaces</li>
+    <li>User-centered evaluation and user studies</li>
+    <li>Questionnaires design and heuristics</li>
+  </ul>
+</section>
+
+<section id="submit">
+  <h2>Submit your evaluation experiences</h2>
+  <p>We invite you to submit your experiences on evaluation. What did go well, what did not go as planned, was the evaluation outcome easy to interpret, did the evaluation method used answer the research questions asked, and so on... These submissions will be reviewed by the organizers and selected based on their relevance to the workshop. Selected contributions will be presented orally (about 5 minutes) during the workshop to inspire group discussions and collaborative activities. Information about this will be communicated in advance of the conference, at 1 of June.</p>
+  <p>Write a short description of your experiences, not more than 400-500 words, and submit this as a pdf-file to <a href="mailto:niklas.ronnberg@liu.se">niklas.ronnberg@liu.se</a>, at latest Friday 22 of May.</p>
+</section>
+
+<section id="dates">
+  <h2>Important Dates</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Friday 22 May 2026</div>
+      <div class="timeline-desc">
+        Deadline for submission of evaluation experiences (PDF, 400–500 words)
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Monday 1 June 2026</div>
+      <div class="timeline-desc">
+        Notification to selected contributors and information about presentations
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">8–12 June 2026</div>
+      <div class="timeline-desc">
+        Workshop held at AVI 2026, Venice, Italy
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="organizers">
+  <h2>Organizers</h2>
+  <p><a href="https://liu.se/en/employee/camfo15">Camilla Forsell</a> is Associate Professor in Evaluation Methodology and Visualization at the Department of Science and Technology, Linköping University, in Sweden. <br>
+    Mail: <a href="mailto:camilla.forsell@liu.se">camilla.forsell@liu.se</a></p>
+  <p><a href="https://liu.se/en/employee/nikro27">Niklas Rönnberg</a> is Senior Associate Professor in Sound Technology at the Department of Science and Technology, Linköping University, Sweden. <br>
+    Mail: <a href="mailto:niklas.ronnberg@liu.se">niklas.ronnberg@liu.se</a></p>
+</section>
+
+<section id="format">
+  <h2>Workshop Format</h2>
+  <p>Full-day, 6-7 hours, workshop.</p>
+  <p>We encourage participants to attend the entire workshop, as the collaborative discussions and group activities build on each other and are essential for achieving the intended outcomes. We are, however, flexible and can adjust the final duration in coordination with the conference organizers to ensure the best possible workshop experience.</p>
+  <p>The workshop will combine short presentations, hands-on sessions, and group discussions to actively engage attendees. Each session is approximately 30 minutes, adjustable depending on number of submissions and discussion flow, allowing flexibility for breaks and adjustments.</p>
+  <ol>
+    <li>Welcome and introductions: Brief introductions of all attendees.</li>
+    <li>User centred evaluation: Overview of current methods and challenges.</li>
+    <li>Presentation of heuristics and questionnaires: Review of existing evaluation instruments.</li>
+    <li>Group work 1: Discussion and analysis of user evaluation practices and existing questionnaires.</li>
+    <li>Reporting and discussion 1: Groups share insights, followed by general discussion.</li>
+    <li>Individual or group activity (to be decided together with the attendees): Ideation through affinity diagrams: The attendees sketch and structure key ideas using affinity diagramming to identify gaps and patterns that will guide the subsequent group work.</li>
+    <li>Group work 2: Collaborative creation of new heuristics, questions, and statements to address identified gaps.</li>
+    <li>Reporting and discussion 2: Groups present their results, followed by plenary discussion.</li>
+    <li>Formation of new questionnaire: Consolidation of ideas into a modular questionnaire.</li>
+    <li>Planning next steps: Discussion of validation approaches for the new questionnaire (of the included heuristics, questions, and statements) and potential future publications. Reflect on the proposed questionnaire modules, outlining plans for confirmatory factor analysis and other validation procedures to ensure reliability, construct validity, and applicability across multimodal interface contexts.</li>
+  </ol>
+</section>
+
+<section id="resources">
+  <h2>Resources</h2>
+  <p>Here follows some existing questionnaires and resources that are, at least to some extent, relevant for the workshop, and for user centered evaluation in general:</p>
+  <ul>
+    <li><a href="https://www.aviz.fr/Research/BeauVis-Scale">BeauVis</a><br>He, T., Isenberg, P., Dachselt, R., & Isenberg, T. (2022). BeauVis: A validated scale for measuring the aesthetic pleasure of visual representations. <em>IEEE Transactions on Visualization and Computer Graphics</em>, 29(1), 363-373.</li>
+    <li><a href="https://www.aviz.fr/PREVis/">Perceived Readability Evaluation in Visualization (PREvis)</a><br>Cabouat, A. F., He, T., Isenberg, P., & Isenberg, T. (2024). PREVis: Perceived readability evaluation for visualizations. <em>IEEE Transactions on Visualization and Computer Graphics</em>.</li>
+    <li><a href="https://sites.cc.gatech.edu/gvu/ii/icet/">ICE-T Value-Driven Visualization Evaluation</a><br>Wall, E., Agnihotri, M., Matzen, L., Divis, K., Haass, M., Endert, A., & Stasko, J. (2018). A heuristic approach to value-driven evaluation of visualizations. <em>IEEE transactions on visualization and computer graphics</em>, 25(1), 491-500.</li>
+    <li><a href="https://en.wikipedia.org/wiki/System_usability_scale">System Usability Scale (SUS)</a><br>Brooke, J. (1996). SUS-A quick and dirty usability scale. <em>Usability evaluation in industry</em>, 189(194), 4-7. </li>
+    <li><a href="https://en.wikipedia.org/wiki/Questionnaire_for_User_Interaction_Satisfaction">Questionnaire for User Interface Satisfaction (QUIS)</a><br>Chin, J. P., Diehl, V. A., & Norman, K. L. (1988). Development of an instrument measuring user satisfaction of the human-computer interface. In <em>Proceedings of the SIGCHI conference on Human factors in computing systems</em> (pp. 213-218).</li>
+    <li><a href="https://sumi.uxp.ie/">Software Usability Measurement Inventory (SUMI)</a><br>Kirakowski, J., Corbett, M., & Sumi, M. (1993). The software usability measurement inventory. <em>British Journal of Educational Technology</em>, 24(3), 210-2.</li>
+    <li><a href="https://en.wikipedia.org/wiki/NASA-TLX">NASA Task Load index (NASA TLX)</a><br>Hart, S. G., & Staveland, L. E. (1988). Development of NASA-TLX (Task Load Index): Results of empirical and theoretical research. In <em>Advances in psychology</em> (Vol. 52, pp. 139-183). North-Holland.</li>
+    <li><a href="https://garyperlman.com/quest/quest.cgi?form=ASQ">After-Scenario Questionnaire (ASQ)</a><br>Lewis, J. R. (1995). IBM computer usability satisfaction questionnaires: psychometric evaluation and instructions for use. <em>International Journal of Human‐Computer Interaction</em>, 7(1), 57-78.</li>
+    <li><a href="https://uiuxtrend.com/pssuq-post-study-system-usability-questionnaire/">Post-Study System Usability Questionnaire (PSSUQ)</a><br>Lewis, J. R. (1995). IBM computer usability satisfaction questionnaires: psychometric evaluation and instructions for use. <em>International Journal of Human‐Computer Interaction</em>, 7(1), 57-78.</li>
+    <li><a href="https://www.uxtesttools.com/tools/csuq-computer-system-usability-questionnaire">Computer System Usability Questionnaire (CSUQ)</a><br>Lewis, J. R. (1995). IBM computer usability satisfaction questionnaires: psychometric evaluation and instructions for use. <em>International Journal of Human‐Computer Interaction</em>, 7(1), 57-78.</li>
+    <li><a href="https://blog.uxtweak.com/umux/">Usability Metric for User Experience (UMUX)</a><br>Finstad, K. (2010). The usability metric for user experience. <em>nteracting with computers</em>, 22(5), 323-327.</li>
+    <li><a href="https://blog.uxtweak.com/umux-lite/">UMUX-LITE</a><br>Lewis, J. R., Utesch, B. S., & Maher, D. E. (2013). UMUX-LITE: when there's no time for the SUS. In <em>Proceedings of the SIGCHI conference on human factors in computing systems</em> (pp. 2099-2102).</li>
+    <li><a href="https://mecue.de/english/home.html">Component model of User Experience (meCUE)</a><br>Minge, M., Thüring, M., & Wagner, I. (2016). Developing and validating an English version of the meCUE questionnaire for measuring user experience. In <em>Proceedings of the Human Factors and Ergonomics Society Annual Meeting</em> (Vol. 60, No. 1, pp. 2063-2067). Sage CA: Los Angeles, CA: SAGE Publications.</li>
+    <li><a href="https://mecue.de/english/home.html">meCUE2.0</a><br>Minge, M., & Thüring, M. (2018). The meCUE questionnaire (2.0): Meeting five basic requirements for lean and standardized UX assessment. In <em>International Conference of Design, User Experience, and Usability</em> (pp. 451-469). Cham: Springer International Publishing.</li>
+    <li><a href="https://www.eworkresearch.org/measuring-immersion-the-ieq-explained/">Immersive Experience Questionnaire (IEQ)</a><br>Rigby, J. M., Brumby, D. P., Gould, S. J., & Cox, A. L. (2019). Development of a questionnaire to measure immersion in video media: The Film IEQ. In <em>Proceedings of the 2019 ACM International Conference on Interactive Experiences for TV and Online Video</em> (pp. 35-46).</li>
+    <li><a href="https://gur.ucsc.edu/instruments">Gaming Engagement Questionnaire (GEQ)</a><br>Brockmyer, J. H., Fox, C. M., Curtiss, K. A., McBroom, E., Burkhart, K. M., & Pidruzny, J. N. (2009). The development of the Game Engagement Questionnaire: A measure of engagement in video game-playing. <em>Journal of experimental social psychology</em>, 45(4), 624-634.</li>
+    <li><a href="https://dissemination-implementation.org/assessment-instrument/user-engagement-scale/">User Engagement Scale (UES)</a><br>Wiebe, E. N., Lamb, A., Hardy, M., & Sharek, D. (2014). Measuring engagement in video game-based environments: Investigation of the User Engagement Scale. <em>Computers in human behavior</em>, 32, 123-132.<br>O’Brien, H. L., Cairns, P., & Hall, M. (2018). A practical approach to measuring user engagement with the refined user engagement scale (UES) and new UES short form. <em>International Journal of Human-Computer Studies</em>, 112, 28-39.</li>
+    <li><a href="http://sonify.psych.gatech.edu/research/buzz/index.html">Auditory Interface User Experience test (the BUZZ)</a><br>Tomlinson, B. J., Noah, B. E., & Walker, B. N. (2018, April). Buzz: An auditory interface user experience scale. In <em>Extended Abstracts of the 2018 CHI Conference on Human Factors in Computing Systems</em> (pp. 1-6).</li>
+    <li><a href=""></a>Desire for Aesthetics Scale (DFAS)<br>Lundy, D. E., Schenkel, M. B., Akrie, T. N., & Walker, A. M. (2010). How important is beauty to you? The development of the Desire for Aesthetics Scale. <em>Empirical Studies of the Arts</em>, 28(1), 73-92.</li>
+    <li><a href=""></a>Centrality of Visual Product Aesthetics (CVPA)<br>Bloch, P. H., Brunel, F. F., & Arnold, T. J. (2003). Individual differences in the centrality of visual product aesthetics: Concept and measurement. <em>Journal of consumer research</em>, 29(4), 551-565.</li>
+    <li><a href="https://osf.io/q8zv5/overview">Aesthetic Emotions Scale (AESTHEMOS)</a><br>Schindler, I., Hosoya, G., Menninghaus, W., Beermann, U., Wagner, V., Eid, M., & Scherer, K. R. (2017). Measuring aesthetic emotions: A review of the literature and a new assessment tool. <em>PloS one</em>, 12(6), e0178899.</li>
+    <li><a href="https://osf.io/483mn/overview">Aesthetic Experience Questionnaire (AEQ)</a><br>Wanzer, D. L., Finley, K. P., Zarian, S., & Cortez, N. (2020). Experiencing flow while viewing art: Development of the Aesthetic Experience Questionnaire. <em>Psychology of Aesthetics, Creativity, and the Arts</em>, 14(1), 113.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>
+    Workshop at AVI 2026 · Venice, Italy<br>
+    © 2026 Camilla Forsell & Niklas Rönnberg<br>
+    Linköping University, Sweden
+  </p>
+</footer>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const nav = document.querySelector("nav");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault();
+
+        const targetId = link.getAttribute("href").slice(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        const navHeight = nav.offsetHeight;
+        const targetPosition =
+          target.getBoundingClientRect().top + window.pageYOffset - navHeight - 8;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth"
+        });
+      });
+    });
+  });
+</script>
+<script>
+  const canvas = document.getElementById("header-canvas");
+  const ctx = canvas.getContext("2d");
+
+  function resize() {
+    canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+    canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+
+  const lines = [
+    { color: "rgba(230, 57, 71, 0.25)", phase: 0 },
+    { color: "rgba(42, 157, 143, 0.25)", phase: 2 },
+    { color: "rgba(69, 123, 157, 0.25)", phase: 4 }
+  ];
+
+  let time = 0;
+
+  function drawLine({ color, phase }) {
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 10;
+    ctx.globalAlpha = 0.5;
+
+    const h = canvas.offsetHeight;
+    const w = canvas.offsetWidth;
+
+    for (let x = 0; x <= w; x += 10) {
+      const y =
+        h / 2 +
+        Math.sin(x * 0.005 + time * 0.02 + phase) * 30 +
+        Math.sin(x * 0.01 + time * 0.01) * 10;
+
+      x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+
+    ctx.stroke();
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    lines.forEach(drawLine);
+    time += 0.1;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
+
+
+</body>
+</html>
